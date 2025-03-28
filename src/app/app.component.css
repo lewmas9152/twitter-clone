@@ -1,39 +1,130 @@
+/* Global Reset and Base Styles */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #1da1f2;
+}
+
+.header h1 {
+  color: #1da1f2;
+  font-size: 24px;
+  margin: 0;
+}
+
+.header select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+}
+
+/* Posts Section */
+.posts-section {
+  background-color: #f5f8fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.posts-section h2 {
+  color: #14171a;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.post {
+  background-color: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.post:hover {
+  background-color: #f5f8fa;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post h3 {
+  color: #14171a;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.post p {
+  color: #657786;
+  line-height: 1.4;
+}
+
+.post.active {
+  border-color: #1da1f2;
+  background-color: #e6f2ff;
+}
+
+/* Comments Section */
+.comments-section {
+  background-color: #f5f8fa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.comments-section h2 {
+  color: #14171a;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.comment {
+  background-color: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.comment h4 {
+  color: #14171a;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.comment p {
+  color: #657786;
+  margin-bottom: 10px;
+}
+
+.comment small {
+  color: #1da1f2;
+  font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .container {
+      padding: 10px;
   }
-  
+
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+      flex-direction: column;
+      align-items: flex-start;
   }
-  
-  select {
-    padding: 10px;
-    min-width: 200px;
+
+  .header select {
+      width: 100%;
+      margin-top: 10px;
   }
-  
-  .posts-section, .comments-section {
-    margin-top: 20px;
-  }
-  
-  .post {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .post:hover, .post.active {
-    background-color: #f0f0f0;
-  }
-  
-  .comment {
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-  }
+}
