@@ -1,130 +1,121 @@
-/* Global Reset and Base Styles */
-.container {
-  max-width: 800px;
+.twitter-clone {
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: white;
+  border: 1px solid #e1e8ed;
+  max-height: 1000px;
+  overflow: scroll;
 }
 
-/* Header Styles */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #1da1f2;
+  background: linear-gradient(to right, #1da1f2, #6f3cff);
+  color: white;
+  padding: 20px;
+  position: relative;
 }
 
-.header h1 {
-  color: #1da1f2;
-  font-size: 24px;
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+}
+
+.profile-info {
+  margin-left: 180px;
+  padding-top: 60px;
+}
+
+.profile-info h1 {
+  font-size: 20px;
   margin: 0;
 }
 
-.header select {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
+.profile-info p {
+  margin: 5px 0;
+  color: #f0f0f0;
 }
 
-/* Posts Section */
-.posts-section {
-  background-color: #f5f8fa;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
+
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 120px;
 }
 
-.posts-section h2 {
-  color: #14171a;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-
-.post {
-  background-color: white;
+.search-input {
+  padding: 10px;
   border: 1px solid #e1e8ed;
-  border-radius: 6px;
-  padding: 15px;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  border-radius: 20px;
+  width: 70%;
 }
 
-.post:hover {
-  background-color: #f5f8fa;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.post h3 {
-  color: #14171a;
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-.post p {
-  color: #657786;
-  line-height: 1.4;
-}
-
-.post.active {
-  border-color: #1da1f2;
-  background-color: #e6f2ff;
-}
-
-/* Comments Section */
-.comments-section {
-  background-color: #f5f8fa;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.comments-section h2 {
-  color: #14171a;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-
-.comment {
-  background-color: white;
+.user-select {
+  padding: 10px;
   border: 1px solid #e1e8ed;
-  border-radius: 6px;
-  padding: 15px;
-  margin-bottom: 15px;
+  border-radius: 20px;
+  width: 25%;
 }
 
-.comment h4 {
-  color: #14171a;
-  margin-bottom: 8px;
-  font-size: 16px;
+.content {
+  display: flex;
+  margin-top: 20px;
 }
 
-.comment p {
-  color: #657786;
-  margin-bottom: 10px;
+.posts-section, .comments-section {
+  width: 50%;
+  padding: 10px;
 }
 
-.comment small {
+.post, .comment {
+  border-bottom: 1px solid #e1e8ed;
+  padding: 10px;
+}
+
+.post-header, .comment-header {
+  display: flex;
+  align-items: center;
+}
+
+.post-profile-image, .comment-profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.verified-badge {
   color: #1da1f2;
-  font-size: 14px;
+  margin-left: 5px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-  .container {
-      padding: 10px;
-  }
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  color: #657786;
+  margin-top: 10px;
+}
 
-  .header {
-      flex-direction: column;
-      align-items: flex-start;
-  }
+.location, .website {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
 
-  .header select {
-      width: 100%;
-      margin-top: 10px;
-  }
+.location-icon, .website-icon {
+  margin-right: 5px;
+}
+
+.website a {
+  color: #1dd9f2;
+  text-decoration: none;
+}
+
+.verified {
+  width: 20px;
 }

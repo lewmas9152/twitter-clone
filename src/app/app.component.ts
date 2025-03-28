@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
   selectedUser: number = 1;
   selectedPost: number | null = null;
 
+
   constructor(
     private userService: UserService,
     private postService: PostService,

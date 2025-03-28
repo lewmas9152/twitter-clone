@@ -1,40 +1,92 @@
-<div class="container">
+<div class="twitter-clone">
   <div class="header">
-    <h1>{{ title }}</h1>
-    <select 
-      [(ngModel)]="selectedUser" 
-      (change)="loadUserPosts(selectedUser)"
-    >
-      <option 
-        *ngFor="let user of users" 
-        [value]="user.id"
+    <div class="profile-section">
+      <div class="profile-image">
+        <img src="assets/profile.png" alt="Profile" />
+      </div>
+      <div class="profile-info">
+        <h1>{{ selectedUserProfile?.name }}</h1>
+        <p> {{ selectedUserProfile?.username }}</p>
+        <p class="bio">{{ selectedUserProfile?.company?.catchPhrase }}</p>
+        <div class="location">
+          <i class="location-icon">📍</i>
+          <span>{{ selectedUserProfile?.address?.city }}</span>
+        </div>
+        <div class="website">
+          <i class="website-icon">🌐</i>
+          <a [href]="'https://' + selectedUserProfile?.website">
+            {{ selectedUserProfile?.website }}
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="header-actions">
+      <input type="text" placeholder="Search" class="search-input" />
+      <select 
+        class="user-select" 
+        [(ngModel)]="selectedUser" 
+        (change)="loadUserPosts(selectedUser)"
       >
-        {{ user.username }}
-      </option>
-    </select>
-  </div>
-
-  <div class="posts-section">
-    <h2>Posts by {{ selectedUserProfile?.username  }}</h2>
-    <div 
-      *ngFor="let post of posts" 
-      class="post"
-      (click)="loadPostComments(post.id)"
-      [class.active]="post.id === selectedPost"
-    >
-      <h3>{{ post.title }}</h3>
-      <p>{{ post.body }}</p>
+        <option 
+          *ngFor="let user of users" 
+          [value]="user.id"
+        >
+          {{ user.name }}
+        </option>
+      </select>
     </div>
   </div>
 
-  <div class="comments-section">
-    <h2>Comments</h2>
-    <div *ngFor="let comment of comments" class="comment">
-      <h4>{{ comment.name }}</h4>
-      <p>{{ comment.body }}</p>
-      <small>{{ comment.email }}</small>
+  <div class="content">
+    <div class="posts-section">
+      <h2>Posts by {{ selectedUserProfile?.name }}</h2>
+      <div 
+        class="post" 
+        *ngFor="let post of posts"
+        (click)="loadPostComments(post.id)"
+        [class.active]="post.id === selectedPost"
+      >
+        <div class="post-header">
+          <img 
+            src="assets/profile.png" 
+            alt="Profile" 
+            class="post-profile-image" 
+          />
+          <div class="post-user-info">
+            <h3>{{ selectedUserProfile?.name }}</h3>
+            <span class="verified-badge">
+              <img src="assets/verified.png" alt="✓" class="verified">
+            </span>
+          </div>
+        </div>
+        <div class="post-content">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.body }}</p>
+        </div>
+        <div class="post-actions">
+          <span class="comment-icon">💬 {{ post.id }}</span>
+          <span class="retweet-icon">🔁 200</span>
+          <span class="like-icon">❤️ 200</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="comments-section">
+      <h2>Comments</h2>
+      <div class="comment" *ngFor="let comment of comments">
+        <div class="comment-header">
+          <img src="assets/profile.png" alt="Profile" class="comment-profile-image" />
+          <div class="comment-user-info">
+            <h4>{{ comment.name }}</h4>
+            <span class="verified-badge">
+              <img src="assets/verified.png" alt="✓" class="verified">
+            </span>
+          </div>
+        </div>
+        <p>{{ comment.body }}</p>
+        <small>{{ comment.email }}</small>
+      </div>
     </div>
   </div>
-
-  <router-outlet></router-outlet>
 </div>
