@@ -1,0 +1,39 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  select {
+    padding: 10px;
+    min-width: 200px;
+  }
+  
+  .posts-section, .comments-section {
+    margin-top: 20px;
+  }
+  
+  .post {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .post:hover, .post.active {
+    background-color: #f0f0f0;
+  }
+  
+  .comment {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
